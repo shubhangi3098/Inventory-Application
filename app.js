@@ -44,7 +44,7 @@ module.exports = app;
 
 //connecting with database
 
-const mongoDB = "mongodb://127.0.0.1/my_database";
-mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
-const db = mongoose.connection;
-db.on("error", console.error.bind(console, "MongoDB connection error:"));
+const mongoDB = "mongodb://127.0.0.1/inventory_db";
+mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true }).then(()=>{
+  console.log("Connected with Database");
+});
