@@ -15,6 +15,10 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+//view wengine for pug
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "pug");
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -49,7 +53,7 @@ module.exports = app;
 
 //connecting with database
 
-const mongoDB = "mongodb://127.0.0.1/inventory_db";
+const mongoDB = "mongodb://127.0.0.1/local_library";
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true }).then(()=>{
   console.log("Connected with Database");
 });
